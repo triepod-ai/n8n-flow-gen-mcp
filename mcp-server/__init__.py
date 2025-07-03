@@ -1,0 +1,1 @@
+# N8N Workflow Generator MCP Server

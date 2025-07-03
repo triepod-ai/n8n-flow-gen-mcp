@@ -1,0 +1,66 @@
+{
+  "name": "Basic Webhook Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "webhook-1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "Hello World"
+            }
+          ]
+        }
+      },
+      "id": "set-1", 
+      "name": "Set Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [400, 200]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "respond-1",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [600, 200]
+    }
+  ],  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Message": {
+      "main": [
+        [
+          {
+            "node": "Respond",
+            "type": "main", 
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "12345678-1234-1234-1234-123456789012"
+}

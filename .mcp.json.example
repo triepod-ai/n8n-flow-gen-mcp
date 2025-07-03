@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "n8n-workflow-generator": {
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp-server.mcp_server"
+      ],
+      "cwd": "/path/to/n8n-flow-gen-mcp"
+    }
+  }
+}
